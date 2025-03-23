@@ -1,0 +1,37 @@
+=========================
+2020.01.08
+=========================
+
+tình hình là sếp sẽ giao Minh với anh Khanh quản lý chất lượng dự án phần mềm và mấy cái liên quan tới bảo mật
+giống như quản lý source code, code review, ko để lọt code ra ngoài thí dụ vậy
+mà Minh sẽ đảm nhiệm chính
+nên có gì Minh tìm hiểu để propose nha
+ví dụ như quản lý source của freelancer ở đâu, github hay bitbucket, và xài account của cty chứ ko phải freelancer tự host hay của 1 cá nhân drcomer nào
+
+Minh to propose and document dev stack process to manage all code QA and maintain knowledge base consistently across projects.
+có thể quá, nhưng mà ko phải như tech pm mà support như a.@Khanh
+
+=========================
+2020.01.18
+=========================
+I) Trình bày chọn 1 quy trình GIT cho 1 dự án cụ thể:
+- Có form đề nghị add vào chi phí dự án nếu chọn quản lý SERVER để deploy GIT trên AWS S3?
+- Dự án nào thì Deploy GIT trên Server LOCAL / DRCOM / AWS EC2 Linux?
+- Giải pháp quản lý GIT trên từ môi trường SERVER bên trên?
+
+II) Cách làm việc với Agency/Vendor (Frame/TTV/S3/SmartOSC/Freelancer)
+- Cách Control sourcecode của Agency/Vendor?
+Vd: S3 ràng buộc sources theo gói dự án:
++ Chi phí theo Package
++ Chi phí theo từng Milestones
+
+- Cách Control sourcecode của Freelancer?
+
+III) Có form để hỗ trợ cho quản lý GIT không?
+
+
+
+
+
+
+

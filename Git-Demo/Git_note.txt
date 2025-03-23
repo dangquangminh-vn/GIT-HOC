@@ -1,0 +1,211 @@
+Refer:
+https://stackoverflow.com/questions/292357/what-is-the-difference-between-git-pull-and-git-fetch
+https://wiki.matbao.net/github-la-gi-cach-chia-se-ma-nguon-tai-code-de-dang-tren-github/
+https://maychuviet.vn/may-chu-la-gi-server-la-gi/
+https://www.bkns.vn/server.html
+
+
+
+=========================
+1) http://git-scm.com/download/win
+=========================
+
+
+=========================
+2) Git Config
+=========================
+
+o Set your username for every repository
+git config --global user.name dangquangminh-vn
+
+o Set your email (same email as your Github account)
+git config --global user.email danagquangminh.vn@gmail.com
+
+o Check Git config
+git config --list
+
+
+=========================
+3) 10 GIT Commands
+=========================
+3.1)
+o Tạo local Repo
+>git init
+
+// Init = Initialize /v/: Khởi chạy or Khởi tạo
+// Repository /n/: Nơi lưu trữ source code của project
+
+o Link remote repository (Github) to Local repository (Your PC)
+>git remote add origin [Your Github link]
+
+o Thay đổi origin url
+>git remote set-url origin https://github.com/repo.git
+
+o Kiem tra ket noi remote
+>git remote -v
+
+3.2)
+o Clone (Tải) a Remote Repo on GitHub to Local PC
+>git clone [GitHub_Repo_URL]
+
+
+3.3)
+o Add changes to Staging Area
+>git add [filename]
+
+o Add all file in working directory
+>git add .
+
+
+3.4)
+o Snapshots (ảnh chụp) the file in preparation for versioning
+>git commit -m "descriptive message"
+
+o change description
+>git commit --amend -m "amend descriptive message"
+
+
+3.5)
+o Uploads all local branch commmits to GitHub
+>git push origin [branch-name]
+
+o Đẩy 1 nhánh hiện tại lên master (remote repository)
+>git push -u origin master
+
+
+3.6)
+o See the status of working directory and staging area
+>git status
+
+
+3.7)
+o View the changes you made relative t0 staging area for the next commit
+>git diff [stage_index_1] [stage_index_2]
+
+
+3.8)
+o Lists version history for the current branch
+>git log -<n>
+
+o Hiển thị mỗi commit trên một dòng
+>git log--oneline
+
+
+3.9)
+o Remove the specified file from the staging area, but leave the working directory unchanged
+>git reset <file>
+
+o General Git Reset Command
+>git reset [--soft | --mixed | --hard | --merge | --keep] <commit-hash của brand muốn quay lại>
+
+
+3.10)
+o Synchronize your local repository  with the remote repository on Github.com
+>git fetch
+
+>git pull
+
+
+3.11)
+o switch branch
+>git checkout [brand]
+vd: >git checkout master
+
+o Cố tình chuyển nhánh (có thể mất sao lưu dữ liệu ở nhánh hiện tại) -force
+>git checkout [brand] -f
+
+o Xem trạng thái branch
+>git branch
+
+o Tạo branch
+>git branch <branchname>
+
+o Tạo branch và tự động chuyển nhánh
+>git checkout -b <branchname>
+
+o Xóa branch
+>git branch -d <branchname>
+
+o Thay đổi tên branch
+>git branch -m <oldbranch> <newbranch>
+
+o Merge branch
+>git merge <branch>
+
+
+3.12)
+o cherry-pick dùng để bưng các thay đổi trong một commit trên một nhánh nào đó áp dụng về nhánh hiện tại
+>git cherry-pick [staging_index]
+vd: >git cherry-pick f23adf
+o Lúc này nhánh master sẽ áp dụng các thanh đổi trong commit f23adf về nhánh master
+
+
+3.13)
+o Một tính năng trong Git khá giống với cherry-pick đó là merge branch.
+o Khi muốn merge các thanh đổi có trong nhánh feature-dev về nhánh master chúng ta sẽ làm các bước như sau.
+o Đầu tiên checkout về nhánh master:
+>git checkout master
+
+o Và sau đó thực hiện việc merge nhánh feature-dev về nhánh master:
+>git merge [brand_name]
+vd: >git merge feature-dev
+o Khác biệt khi bạn thực hiện động tác merge branch như trên đó là Git sẽ áp dụng các thanh đổi của commit mới nhất
+  trong nhánh feature-dev về nhánh master. Nghĩa là Git sẽ lấy các thanh đổi trong commit C1 và áp dụng về nhánh master.
+
+
+3.14) Git clone thông qua SSH
+o ssh-keygen -t rsa
+
+
+3.15) Lưu tạm khi chuyển nhánh
+>git stash save
+
+o check version sao lưu
+>git stash list
+
+o Quay lai version sao lưu
+>git stash apply stash@{[index]}
+
+o Xóa sao lưu
+>git stash drop stash@{[index]}
+
+
+3.16) Git Tag
+o Tạo 1 Tag
+>git tag -a <tên tag> -m "<tag comment>"
+
+o Hiển thị danh sách tag
+>git tag
+
+o Kiểm tra một tag cụ thể
+>git show <tên tag>
+
+o Push tag lên remote
+>git push origin <tag name>
+
+o Push tất cả tag lên remote
+>git push origin --tags
+
+o Xóa tag
+>git tag --delete <tag name>
+
+o Xóa tag trên remote
+>git tag --delete origin <tag name>
+
+o Gắn tag cho 1 commit (đã add vào history)
+>git tag -a <tag name> -m '<comment>' <commit hash>
+ex: git tag -a v1.2 -m 'version 1.2' 9fceb02
+
+o Tạo 1 nhánh mới từ commit được gắn tag
+> git checkout -b <tên nhánh> <tên tag của commit cần copy về nhánh mới>
+
+3.17) Git Archive
+git archive --format=zip HEAD `git diff HEAD^ HEAD --name-only` > ~/Desktop/enfaweb_release_2021_01_11.zip
+zip những file thay đổi, theo cấu trúc source 
+thành 1 file abc.zip ở lần commit sau cùng 
+
+
+
+
+
+
